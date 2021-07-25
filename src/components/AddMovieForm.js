@@ -23,6 +23,9 @@ const AddMovieForm = (props) => {
     }
 
     const handleSubmit = (e) => {
+        Object.assign(movie,{ id: props.movies })
+        props.dispatch(addMovie(movie))
+        push('/movies')
     }
 
     const { title, director, genre, metascore, description } = movie;
